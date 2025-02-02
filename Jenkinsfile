@@ -9,12 +9,12 @@ pipeline {
         }
         stage('test') {
             steps {
-                echo 'Hello India'
+                echo 'Hello dubai'
             }
         }
         stage('deploy') {
             steps {
-                echo 'Hello Maharashtra'
+                echo 'Hello abu dhabi'
             }
         }
     }
