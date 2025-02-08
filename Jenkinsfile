@@ -2,20 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('build') {  // Corrected 'buuild' to 'build'
+        stage('git checkout') {
             steps {
-                echo 'Hello World'
-            }
-        }
-        stage('test') {
+            git 'https://github.com/kumargaurav039/maven-project.git'
+            } }
+            stage('build') {
             steps {
-                echo 'Hello dubai'
-            }
-        }
-        stage('deploy') {
-            steps {
-                echo 'Hello abu dhabi'
+            withMaven(globalMavenSettingsConfig: '', jdk: 'JAVA_HOME', maven: 'MVN_HOME', mavenSettingsConfig: '', traceability: true) {
+            sh 'mvn validate'
+}
             }
         }
     }
 }
+
